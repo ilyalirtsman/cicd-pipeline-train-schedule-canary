@@ -21,16 +21,16 @@ metadata:
   labels:
     app: train-schedule
 spec:
-  replicas: 2
+  replicas: $CANARY_REPLICAS
   selector:
     matchLabels:
       app: train-schedule
-      track: stable
+      track: canary
   template:
     metadata:
       labels:
         app: train-schedule
-        track: stable
+        track: canary
     spec:
       containers:
       - name: train-schedule
